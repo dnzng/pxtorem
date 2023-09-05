@@ -1,0 +1,63 @@
+{
+  "name": "@dnzng/pxtorem",
+  "version": "1.1.0-beta.2",
+  "description": "Convert pixel units to rem units",
+  "packageManager": "pnpm@8.6.5",
+  "engines": {
+    "node": ">=16"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "unpkg": "dist/index.global.js",
+  "jsdelivr": "dist/index.global.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Dylan Zhang",
+  "license": "MIT",
+  "homepage": "https://github.com/dnzng/pxtorem#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnzng/pxtorem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dnzng/pxtorem/issues"
+  },
+  "keywords": [
+    "px",
+    "rem"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "prepublishOnly": "npm run build",
+    "release": "bumpp && npm publish",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "lint": "eslint"
+  },
+  "devDependencies": {
+    "@dnzng/eslint-config-ts": "^0.1.8",
+    "bumpp": "^9.1.1",
+    "eslint": "^8.45.0",
+    "jsdom": "^22.1.0",
+    "lint-staged": "^13.2.3",
+    "simple-git-hooks": "^2.9.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged && pnpm typecheck"
+  },
+  "lint-staged": {
+    "*.{js,ts,json,md}": [
+      "eslint --fix"
+    ]
+  }
+}
