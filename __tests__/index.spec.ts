@@ -1,18 +1,23 @@
-// @vitest-environment jsdom
 import { test, expect } from 'vitest'
-import { genRootFontSize } from '../src'
+import { genRootFontSize } from '../src/core'
 
-const clientWidth = 375
-const designWidth = 750
-const base = 100
+const formula = (
+  clientWidth: number = 375,
+  designWidth: number = 750,
+  base: number = 100
+) => base / designWidth * clientWidth
 
 test('default', () => {
-  const getRootFontSize = genRootFontSize()
-  expect(getRootFontSize(clientWidth)).toBe(base / designWidth * clientWidth)
+  const clientWidth = 300
+  const actual = genRootFontSize()
+  expect(actual(clientWidth)).toBe(formula(clientWidth))
 })
 
 test('maxClientWidth', () => {
-  const getRootFontSize = genRootFontSize({ maxClientWidth: 375 })
-  expect(getRootFontSize(clientWidth)).toBe(base / designWidth * clientWidth)
-  expect(getRootFontSize(clientWidth + 100)).toBe(base / designWidth * clientWidth)
+  const maxClientWidth = 375
+  const lessThanMax = 300
+  const greaterThanMax = 750
+  const actual = genRootFontSize({ maxClientWidth })
+  expect(actual(lessThanMax)).toBe(formula(lessThanMax))
+  expect(actual(greaterThanMax)).toBe(formula(maxClientWidth))
 })
