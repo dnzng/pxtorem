@@ -45,7 +45,7 @@ If there is a named title element in your design, its width and height are 100px
 
 ## API
 
-- `pxtorem(options?: Options = {})`
+- `pxtorem(options: Options = {})`
 
 ## Options
 
