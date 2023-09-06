@@ -1,13 +1,9 @@
 import type { Options, ResolvedOptions } from './types'
+import { defaultOptions } from './options'
 import { extend } from './utils'
 
-const DEFAULT_OPTIONS: Options = {
-  designWidth: 750,
-  base: 100
-}
-
 function resolveOptions(options: Options) {
-  options = extend({}, DEFAULT_OPTIONS, options)
+  options = extend({}, defaultOptions, options)
   return options as ResolvedOptions
 }
 
