@@ -7,3 +7,8 @@ export interface Options {
 }
 
 export type ResolvedOptions = markRequired<Options, 'designWidth' | 'base'>
+
+export interface DebounceOptions {
+  timeout?: number
+  immediate?: boolean // whether to excute immediately
+}

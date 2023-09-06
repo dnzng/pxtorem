@@ -1,9 +1,7 @@
+import type { DebounceOptions } from './types'
+
 export const extend = Object.assign
 
-interface DebounceOptions {
-  timeout?: number
-  immediate?: boolean // whether to excute immediately
-}
 const DEFAULT_OPTIONS: DebounceOptions = {
   timeout: 100,
   immediate: true
