@@ -1,5 +1,5 @@
 import type { DebounceOptions } from './types'
-import { defaltDebounceOptions } from './options'
+import { resolveDebounceOptions } from './options'
 
 export const extend = Object.assign
 
@@ -7,7 +7,7 @@ export function debounce(
   fn: (...args: any[]) => void,
   options: DebounceOptions = {}
 ) {
-  const opts = extend({}, defaltDebounceOptions, options)
+  const opts = resolveDebounceOptions(options)
   let timer: ReturnType<typeof setTimeout> | null = null
 
   if (opts.immediate) {
