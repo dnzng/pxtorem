@@ -52,6 +52,7 @@ If there is a named title element in your design, its width and height are 100px
 - `designWidth?: number`: width of your design. default is 750.
 - `base?: number`: baseline. default is 100.
 - `maxClientWidth?: number`: max client width. default is undefined. When it is set and the client width is more than it, the `font-size` style of the document will keep constant.
+- `interval?: number`: the interval to update the `font-size` style of the document element when frequently changing the window size. default is 100 in milliseconds.
 
 # License
 
