@@ -1,15 +1,17 @@
-declare type markRequired<T, RK extends keyof T> = Exclude<T, RK> & Required<Pick<T, RK>>
-
-export interface DebounceOptions {
-  timeout?: number
-  immediate?: boolean // whether to excute immediately
-}
-export type ResolvedDebounceOptions = Required<DebounceOptions>
+declare type markRequired<T, RK extends keyof T> = Omit<T, RK> & Required<Pick<T, RK>>
 
 export interface Options {
   designWidth?: number
   base?: number
   maxClientWidth?: number
-  debounce?: DebounceOptions
+  interval?: number
 }
-export type ResolvedOptions = markRequired<Options, 'designWidth' | 'base'>
+
+export type RootOptions = Omit<Options, 'interval'>
+export type ResolvedRootOptions = markRequired<RootOptions, 'designWidth' | 'base'>
+
+export interface DebounceOptions {
+  interval?: number
+  immediate?: boolean // whether to excute immediately
+}
+export type ResolvedDebounceOptions = Required<DebounceOptions>

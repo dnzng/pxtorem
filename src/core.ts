@@ -1,8 +1,8 @@
-import type { ResolvedOptions } from './types'
+import type { RootOptions } from './types'
+import { resolveRootOptions } from './options'
 
-export function genRootFontSize(options: ResolvedOptions) {
-  const { designWidth, base, maxClientWidth } = options
-
+export function genRootFontSize(options: RootOptions = {}) {
+  const { designWidth, base, maxClientWidth } = resolveRootOptions(options)
   return (clientWidth: number) => {
     // keep clientWidth constant when reaching maxClientWidth
     if (maxClientWidth && clientWidth >= maxClientWidth) {

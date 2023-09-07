@@ -21,6 +21,6 @@ export function debounce(
     timer = setTimeout(() => {
       fn.apply(this, args)
       timer = null
-    }, opts.timeout)
+    }, opts.interval)
   }
 }
