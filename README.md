@@ -2,19 +2,9 @@
 
 [![npm](https://img.shields.io/npm/v/@dnzng/pxtorem.svg)](https://www.npmjs.com/package/@dnzng/pxtorem)
 
-Convert pixel units to rem units.
+Convert pixel units to rem units. Mainly used when you only want to use HTML rather than a bundler.
 
-## Installation
-
-```bash
-npm i @dnzng/pxtorem
-# or pnpm
-pnpm add @dnzng/pxtorem
-# or yarn
-yarn add @dnzng/pxtorem
-```
-
-## CDN
+## HTML
 
 ```html
 <script type="text/javascript" src="https://unpkg.com/@dnzng/pxtorem"></script>
@@ -24,7 +14,19 @@ yarn add @dnzng/pxtorem
 </script>
 ```
 
-## Usage
+## Bundler
+
+### Installation
+
+```bash
+npm i @dnzng/pxtorem
+# or pnpm
+pnpm add @dnzng/pxtorem
+# or yarn
+yarn add @dnzng/pxtorem
+```
+
+### Usage
 
 ```js
 import { pxtorem } from '@dnzng/pxtorem'
@@ -32,7 +34,7 @@ import { pxtorem } from '@dnzng/pxtorem'
 pxtorem()
 ```
 
-### CSS
+## CSS
 
 If there is a named title element in your design, its width and height are 100px and 30px respectively. When the base option is set to 100, which is default and recommended, You can know its value by simple calculations, and write as follows:
 
