@@ -36,7 +36,7 @@ pxtorem()
 
 ## CSS
 
-If there is a named title element in your design, its width and height are 100px and 30px respectively. When the base option is set to 100, which is default and recommended, You can know its value by simple calculations, and write as follows:
+If there are some named title elements in your design, its width and height are 100px and 30px respectively. When the `base` option is set to 100, which is default and recommended, You can know its value by simple calculations, and write as follows:
 
 ```css
 .title {
