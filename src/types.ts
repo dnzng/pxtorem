@@ -15,3 +15,5 @@ export interface DebounceOptions {
   immediate?: boolean // whether to excute immediately
 }
 export type ResolvedDebounceOptions = Required<DebounceOptions>
+
+export type RemoveHandle = () => void
