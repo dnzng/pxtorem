@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/@dnzng/pxtorem.svg)](https://www.npmjs.com/package/@dnzng/pxtorem)
 
-Convert pixel units to rem units. Mainly used when you only want to use HTML rather than a bundler.
+Convert pixel units to rem units. Mainly used when you only want to use HTML rather than a bundler like webpack or vite.
 
 ## HTML
 
