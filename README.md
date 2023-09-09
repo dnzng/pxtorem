@@ -20,10 +20,6 @@ Convert pixel units to rem units. Mainly used when you only want to use HTML rat
 
 ```bash
 npm i @dnzng/pxtorem
-# or pnpm
-pnpm add @dnzng/pxtorem
-# or yarn
-yarn add @dnzng/pxtorem
 ```
 
 ### Usage
